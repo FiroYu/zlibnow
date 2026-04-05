@@ -5,237 +5,536 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZLibNow - Z-Library Official Access Links</title>
     <meta name="description" content="Verified links to access the real Z-Library. Avoid fake sites.">
+    <meta name="keywords" content="Z-Library, z-library, zlib, access links, tor, onion, download books">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://zlibnow.com">
+    <meta property="og:title" content="ZLibNow - Z-Library Official Access Links">
+    <meta property="og:description" content="Verified links to access the real Z-Library. Avoid fake sites.">
+    <meta property="og:url" content="https://zlibnow.com">
+    <meta property="og:type" content="website">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+        :root {
+            --shadow-light: 5px 5px 0 #000;
+            --shadow-medium: 7px 7px 0 #000;
+            --shadow-heavy: 9px 9px 0 #000;
+            --shadow-hover: 3px 3px 0 #000;
+            --border: 3px solid #000;
+            --bg-cream: #FFF4E0;
+            --bg-white: #FFFFFF;
+            --blue: #78D6FF;
+            --purple: #D4ADFC;
+            --yellow: #FDFFAB;
+            --green: #A8FF78;
+            --red: #FF5252;
+            --gray-light: #F5F5F5;
+            --gray-medium: #E8E8E8;
+        }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Space Grotesk', -apple-system, sans-serif;
-            background: #FFF4E0;
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-cream);
+            background-image:
+                radial-gradient(circle, #ddd 1px, transparent 1px);
+            background-size: 20px 20px;
             color: #1a1a2e;
             line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 2rem;
         }
 
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 100;
+        }
+
+        .lang-switcher select {
+            padding: 0.5rem 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: var(--yellow);
+            border: var(--border);
+            box-shadow: var(--shadow-light);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 0;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        .lang-switcher select:hover {
+            transform: translate(2px, 2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .lang-switcher select:focus {
+            outline: none;
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Container */
         .container {
-            max-width: 700px;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 2.5rem 1rem;
+            padding: 4rem 1.5rem 2rem;
         }
 
-        /* ---- HEADER ---- */
+        /* Header */
         header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            padding-top: 1rem;
         }
+
         header h1 {
-            font-size: 2.6rem;
+            font-size: 3rem;
             font-weight: 700;
             color: #000;
             display: inline-block;
-            background: #A8FF78;
-            padding: 0.2rem 1.2rem;
-            border: 3px solid #000;
-            box-shadow: 6px 6px 0 #000;
-            margin-bottom: 0.5rem;
+            background: var(--green);
+            padding: 0.4rem 1.8rem;
+            border: var(--border);
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
         }
+
+        header h1:hover {
+            transform: translateY(-3px) rotate(-1deg);
+            box-shadow: var(--shadow-heavy);
+        }
+
         header p {
             color: #333;
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
 
-        /* ---- SECTION CARD ---- */
+        /* Section Cards */
         .section {
-            background: #fff;
-            border: 3px solid #000;
-            box-shadow: 6px 6px 0 #000;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
+            background: var(--bg-white);
+            border: var(--border);
+            box-shadow: var(--shadow-light);
+            padding: 2rem;
+            margin-bottom: 1.75rem;
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
         }
+
+        .section:hover {
+            transform: translateY(-2px) rotate(0.5deg);
+            box-shadow: var(--shadow-medium);
+        }
+
         .section h2 {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1rem;
-            padding: 0.3rem 0.8rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.25rem;
+            padding: 0.4rem 1rem;
             display: inline-block;
+            border: 2px solid #000;
+            box-shadow: 3px 3px 0 #000;
         }
-        .section-title-blue { background: #78D6FF; }
-        .section-title-purple { background: #D4ADFC; }
-        .section-title-yellow { background: #FDFFAB; }
-        .section-title-green { background: #A8FF78; }
 
-        /* ---- LINKS GRID ---- */
+        .section-title-blue { background: var(--blue); }
+        .section-title-purple { background: var(--purple); }
+        .section-title-yellow { background: var(--yellow); }
+        .section-title-green { background: var(--green); }
+
+        /* Links Grid */
         .links {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 0.75rem;
+            gap: 0.875rem;
         }
+
         .links a {
             display: block;
-            padding: 0.65rem 0.85rem;
-            background: #fff;
+            padding: 0.75rem 1rem;
+            background: var(--bg-white);
             border: 2px solid #000;
             box-shadow: 4px 4px 0 #000;
             text-decoration: none;
             color: #000;
             font-weight: 600;
             font-size: 0.95rem;
-            transition: all 0.1s;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            position: relative;
+            overflow: hidden;
         }
+
+        .links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(168, 255, 120, 0.3), transparent);
+            transition: left 0.4s ease;
+        }
+
+        .links a:hover::before {
+            left: 100%;
+        }
+
         .links a:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0 #000;
-            background: #A8FF78;
+            transform: translate(3px, 3px) rotate(-1deg);
+            box-shadow: var(--shadow-hover);
+            background: var(--green);
         }
+
         .links.full { grid-template-columns: 1fr; }
 
+        /* Tags */
         .tag {
             display: inline-block;
             font-size: 0.7rem;
-            padding: 0.1rem 0.45rem;
+            padding: 0.15rem 0.5rem;
             border: 1.5px solid #000;
-            margin-left: 0.4rem;
-            font-weight: 600;
+            margin-left: 0.5rem;
+            font-weight: 700;
             vertical-align: middle;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
-        .tag-blue { background: #78D6FF; }
-        .tag-green { background: #A8FF78; }
-        .tag-purple { background: #D4ADFC; }
 
-        /* ---- TOR ---- */
+        .tag-blue { background: var(--blue); }
+        .tag-green { background: var(--green); }
+        .tag-purple { background: var(--purple); }
+        .tag-red { background: var(--red); }
+
+        /* Tor Links */
         .tor-link {
             display: block;
-            padding: 0.65rem 0.85rem;
-            background: #E8E8E8;
+            padding: 0.75rem 1rem;
+            background: var(--gray-medium);
             border: 2px solid #000;
             box-shadow: 4px 4px 0 #000;
-            font-family: 'Courier New', monospace;
-            font-size: 0.78rem;
+            font-family: 'Courier New', 'Courier', monospace;
+            font-size: 0.8rem;
             color: #000;
             text-decoration: none;
             word-break: break-all;
-            margin-bottom: 0.75rem;
-            transition: all 0.1s;
-        }
-        .tor-link:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0 #000;
+            margin-bottom: 0.875rem;
+            transition: all 0.2s ease;
+            transform-style: preserve-3d;
         }
 
-        /* ---- APP LINKS ---- */
-        .app-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .tor-link:hover {
+            transform: translate(3px, 3px);
+            box-shadow: var(--shadow-hover);
+            background: #d0d0d0;
+        }
+
+        .tor-link .tag {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* App Links */
+        .app-links {
+            display: flex;
+            gap: 0.875rem;
+            flex-wrap: wrap;
+        }
+
         .app-links a {
-            padding: 0.55rem 1rem;
-            background: #D4ADFC;
+            padding: 0.65rem 1.25rem;
+            background: var(--purple);
             border: 2px solid #000;
             box-shadow: 4px 4px 0 #000;
             text-decoration: none;
             color: #000;
             font-weight: 600;
             font-size: 0.95rem;
-            transition: all 0.1s;
-        }
-        .app-links a:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0 #000;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
         }
 
-        /* ---- TABLE ---- */
+        .app-links a:hover {
+            transform: translate(3px, 3px) rotate(-1deg);
+            box-shadow: var(--shadow-hover);
+            background: #c49ef0;
+        }
+
+        /* Table */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 0.75rem;
+            margin-top: 1rem;
             border: 2px solid #000;
+            box-shadow: 2px 2px 0 #000;
         }
+
         th, td {
             text-align: left;
-            padding: 0.45rem 0.75rem;
+            padding: 0.6rem 1rem;
             border: 1px solid #000;
             font-size: 0.9rem;
         }
-        th { font-weight: 700; background: #FDFFAB; }
-        tr:nth-child(even) td { background: #f5f5f5; }
 
-        /* ---- WARNING ---- */
-        .warning {
-            background: #FF6B6B;
-            border: 3px solid #000;
-            box-shadow: 6px 6px 0 #000;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .warning h2 {
-            color: #000;
-            font-size: 1.2rem;
+        th {
             font-weight: 700;
+            background: var(--yellow);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 0.75rem;
-            background: #FDFFAB;
-            padding: 0.3rem 0.8rem;
-            display: inline-block;
         }
-        .warning p { color: #000; font-weight: 600; }
+
+        tr:nth-child(even) td {
+            background: var(--gray-light);
+        }
+
+        tr:hover td {
+            background: #e8f8ff;
+        }
+
+        /* Note */
+        .note {
+            font-size: 0.875rem;
+            color: #555;
+            margin-top: 1rem;
+            font-weight: 500;
+            padding-left: 0.5rem;
+            border-left: 3px solid var(--purple);
+        }
+
+        /* Warning Section */
+        .warning {
+            background: var(--red);
+            border: var(--border);
+            box-shadow: var(--shadow-medium);
+            padding: 2rem;
+            margin-bottom: 1.75rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .warning::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.1) 10px,
+                rgba(255, 255, 255, 0.1) 20px
+            );
+            pointer-events: none;
+        }
+
+        .warning h2 {
+            color: #000;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+            background: var(--yellow);
+            padding: 0.4rem 1rem;
+            display: inline-block;
+            border: 2px solid #000;
+            box-shadow: 3px 3px 0 #000;
+            position: relative;
+            z-index: 1;
+        }
+
+        .warning p {
+            color: #000;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
         .fake-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 0.75rem 0;
+            gap: 0.6rem;
+            margin: 1rem 0;
+            position: relative;
+            z-index: 1;
         }
+
         .fake-list code {
             background: #fff;
-            padding: 0.3rem 0.8rem;
+            padding: 0.4rem 0.9rem;
             border: 2px solid #000;
             text-decoration: line-through;
             color: #000;
             font-size: 0.95rem;
             font-weight: 700;
+            box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
         }
 
-        .note {
-            font-size: 0.85rem;
-            color: #444;
-            margin-top: 0.75rem;
-            font-weight: 600;
+        .fake-list code:hover {
+            transform: scale(1.05);
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
         }
 
-        /* ---- FOOTER ---- */
+        /* Footer */
         footer {
             text-align: center;
-            padding: 1.5rem 0;
-            color: #666;
+            padding: 2rem 0 1rem;
+            color: #444;
             font-size: 0.85rem;
             font-weight: 600;
         }
 
-        /* ---- MOBILE ---- */
-        @media (max-width: 520px) {
-            header h1 { font-size: 1.8rem; }
-            .links { grid-template-columns: 1fr; }
-            .container { padding: 1.5rem 0.75rem; }
-            .section { padding: 1rem; box-shadow: 4px 4px 0 #000; }
-            .warning { box-shadow: 4px 4px 0 #000; }
-            .links a { box-shadow: 3px 3px 0 #000; }
-            .links a:hover { box-shadow: 1px 1px 0 #000; transform: translate(2px, 2px); }
-            .tor-link { box-shadow: 3px 3px 0 #000; }
-            .app-links a { box-shadow: 3px 3px 0 #000; }
+        footer a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 2px solid var(--green);
+            transition: all 0.2s ease;
+        }
+
+        footer a:hover {
+            background: var(--green);
+        }
+
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        [dir="rtl"] .tag {
+            margin-left: 0;
+            margin-right: 0.5rem;
+        }
+
+        [dir="rtl"] .lang-switcher {
+            right: auto;
+            left: 1rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+            header h1 {
+                font-size: 2rem;
+                padding: 0.3rem 1.2rem;
+            }
+
+            header p {
+                font-size: 0.95rem;
+            }
+
+            .container {
+                padding: 3rem 1rem 1.5rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+                box-shadow: var(--shadow-light);
+            }
+
+            .section:hover {
+                transform: none;
+                box-shadow: var(--shadow-light);
+            }
+
+            .links {
+                grid-template-columns: 1fr;
+            }
+
+            .warning {
+                padding: 1.5rem;
+                box-shadow: var(--shadow-light);
+            }
+
+            .fake-list {
+                flex-direction: column;
+            }
+
+            .fake-list code {
+                display: block;
+                text-align: center;
+            }
+
+            .lang-switcher {
+                top: 0.5rem;
+                right: 0.5rem;
+            }
+
+            [dir="rtl"] .lang-switcher {
+                right: auto;
+                left: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+
+            .app-links {
+                flex-direction: column;
+            }
+
+            .app-links a {
+                text-align: center;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--green);
+            color: #000;
+        }
+
+        /* Focus */
+        a:focus-visible,
+        select:focus-visible {
+            outline: 3px solid var(--blue);
+            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
+    <div class="lang-switcher">
+        <select id="langSelect" aria-label="Select language">
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="it">Italiano</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="ru">Русский</option>
+            <option value="ar">العربية</option>
+        </select>
+    </div>
+
     <div class="container">
         <header>
             <h1>ZLibNow</h1>
-            <p>Verified Z-Library access links</p>
+            <p data-i18n="subtitle">Verified Z-Library access links</p>
         </header>
 
         <!-- Browser Access -->
         <div class="section">
-            <h2 class="section-title-blue">Browser Access</h2>
+            <h2 class="section-title-blue" data-i18n="browserAccess">Browser Access</h2>
             <div class="links">
                 <a href="https://z-library.gs" target="_blank" rel="noopener">z-library.gs</a>
                 <a href="https://z-lib.fm" target="_blank" rel="noopener">z-lib.fm</a>
@@ -245,54 +544,354 @@
                 <a href="http://z-lib.gl" target="_blank" rel="noopener">z-lib.gl</a>
                 <a href="https://zliba.ru" target="_blank" rel="noopener">zliba.ru</a>
             </div>
-            <div class="links full" style="margin-top:0.75rem">
-                <a href="https://z-library.ec" target="_blank" rel="noopener">z-library.ec <span class="tag tag-blue">IT / FR / ES</span></a>
+            <div class="links full" style="margin-top: 1rem">
+                <a href="https://z-library.ec" target="_blank" rel="noopener">z-library.ec <span class="tag tag-blue" data-i18n="regionTag">IT / FR / ES</span></a>
             </div>
             <div class="links full">
-                <a href="https://go-to-library.sk/#browser_extensions_tab" target="_blank" rel="noopener">Firefox Extension <span class="tag tag-green">Auto</span></a>
+                <a href="https://go-to-library.sk/#browser_extensions_tab" target="_blank" rel="noopener"><span data-i18n="firefoxExtension">Firefox Extension</span> <span class="tag tag-green">Auto</span></a>
             </div>
-            <p class="note">China users: Use any link above with a VPN.</p>
+            <p class="note" data-i18n="chinaNote">China users: Use any link above with a VPN.</p>
         </div>
 
         <!-- Tor Access -->
         <div class="section">
-            <h2 class="section-title-purple">Tor Access</h2>
-            <p style="margin-bottom:0.75rem;font-size:0.9rem;font-weight:600">Download <a href="https://www.torproject.org/download/" style="color:#000;text-decoration:underline;font-weight:700">Tor Browser</a>, then visit:</p>
+            <h2 class="section-title-purple" data-i18n="torAccess">Tor Access</h2>
+            <p style="margin-bottom: 1rem; font-size: 0.9rem; font-weight: 600">
+                <span data-i18n="torIntro">Download</span> <a href="https://www.torproject.org/download/" style="color: #000; text-decoration: underline; font-weight: 700;" target="_blank" rel="noopener">Tor Browser</a>, <span data-i18n="torThen">then visit:</span>
+            </p>
             <a class="tor-link" href="http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion" target="_blank" rel="noopener">bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion</a>
-            <a class="tor-link" href="http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion" target="_blank" rel="noopener">loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion <span class="tag tag-blue">Backup</span></a>
+            <a class="tor-link" href="http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion" target="_blank" rel="noopener">loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion <span class="tag tag-blue" data-i18n="backupTag">Backup</span></a>
         </div>
 
         <!-- Apps & Telegram -->
         <div class="section">
-            <h2 class="section-title-yellow">Apps & Telegram Bot</h2>
+            <h2 class="section-title-yellow" data-i18n="appsTitle">Apps & Telegram Bot</h2>
             <div class="app-links">
-                <a href="https://go-to-library.sk/" target="_blank" rel="noopener">Desktop / Android</a>
-                <a href="https://go-to-library.sk/#telegram_bot_tab" target="_blank" rel="noopener">Telegram Bot <span class="tag tag-purple">+10/day</span></a>
+                <a href="https://go-to-library.sk/" target="_blank" rel="noopener" data-i18n="desktopApp">Desktop / Android</a>
+                <a href="https://go-to-library.sk/#telegram_bot_tab" target="_blank" rel="noopener"><span data-i18n="telegramBot">Telegram Bot</span> <span class="tag tag-purple">+10/day</span></a>
             </div>
             <table>
-                <tr><th>Type</th><th>Downloads / Day</th></tr>
-                <tr><td>Guest</td><td>5</td></tr>
-                <tr><td>Free Account</td><td>10</td></tr>
-                <tr><td>Account + Telegram</td><td>20</td></tr>
+                <tr>
+                    <th data-i18n="typeHeader">Type</th>
+                    <th data-i18n="downloadsHeader">Downloads / Day</th>
+                </tr>
+                <tr>
+                    <td data-i18n="guest">Guest</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td data-i18n="freeAccount">Free Account</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td data-i18n="accountTelegram">Account + Telegram</td>
+                    <td>20</td>
+                </tr>
             </table>
-            <p class="note">New accounts get a 2-week premium trial.</p>
+            <p class="note" data-i18n="premiumTrial">New accounts get a 2-week premium trial.</p>
         </div>
 
         <!-- Warning -->
         <div class="warning">
-            <h2>Fake Sites - Do NOT Visit</h2>
-            <p>These domains steal credentials and charge fake fees:</p>
+            <h2 data-i18n="fakeSitesTitle">Fake Sites - Do NOT Visit</h2>
+            <p data-i18n="fakeSitesIntro">These domains steal credentials and charge fake fees:</p>
             <div class="fake-list">
                 <code>z-lib.io</code>
                 <code>z-lib.id</code>
                 <code>zlibrary.to</code>
             </div>
-            <p style="font-size:0.9rem;margin-top:0.5rem">If a site asks for payment or donation, it is NOT the real Z-Library.</p>
+            <p style="font-size: 0.9rem; margin-top: 0.75rem; position: relative; z-index: 1;" data-i18n="paymentWarning">If a site asks for payment or donation, it is NOT the real Z-Library.</p>
         </div>
 
         <footer>
-            <p>zlibnow.com</p>
+            <p><a href="https://zlibnow.com" target="_blank" rel="noopener">zlibnow.com</a></p>
         </footer>
     </div>
+
+    <script>
+        // Translations for all 10 languages
+        const translations = {
+            en: {
+                subtitle: "Verified Z-Library access links",
+                browserAccess: "Browser Access",
+                regionTag: "IT / FR / ES",
+                firefoxExtension: "Firefox Extension",
+                chinaNote: "China users: Use any link above with a VPN.",
+                torAccess: "Tor Access",
+                torIntro: "Download",
+                torThen: "then visit:",
+                backupTag: "Backup",
+                appsTitle: "Apps & Telegram Bot",
+                desktopApp: "Desktop / Android",
+                telegramBot: "Telegram Bot",
+                typeHeader: "Type",
+                downloadsHeader: "Downloads / Day",
+                guest: "Guest",
+                freeAccount: "Free Account",
+                accountTelegram: "Account + Telegram",
+                premiumTrial: "New accounts get a 2-week premium trial.",
+                fakeSitesTitle: "Fake Sites - Do NOT Visit",
+                fakeSitesIntro: "These domains steal credentials and charge fake fees:",
+                paymentWarning: "If a site asks for payment or donation, it is NOT the real Z-Library.",
+                dir: "ltr"
+            },
+            zh: {
+                subtitle: "经过验证的 Z-Library 访问链接",
+                browserAccess: "浏览器访问",
+                regionTag: "意大利 / 法国 / 西班牙",
+                firefoxExtension: "Firefox 扩展",
+                chinaNote: "中国用户：请使用以上任意链接 + VPN。",
+                torAccess: "Tor 访问",
+                torIntro: "下载",
+                torThen: "然后访问：",
+                backupTag: "备份",
+                appsTitle: "应用与 Telegram 机器人",
+                desktopApp: "桌面 / Android 应用",
+                telegramBot: "Telegram 机器人",
+                typeHeader: "类型",
+                downloadsHeader: "每日下载量",
+                guest: "游客",
+                freeAccount: "免费账户",
+                accountTelegram: "账户 + Telegram",
+                premiumTrial: "新账户可获得2周高级试用。",
+                fakeSitesTitle: "假冒网站 - 切勿访问",
+                fakeSitesIntro: "这些域名会窃取您的登录信息并收取虚假费用：",
+                paymentWarning: "如果某个网站要求付款或捐款，那不是真正的 Z-Library。",
+                dir: "ltr"
+            },
+            es: {
+                subtitle: "Enlaces verificados de acceso a Z-Library",
+                browserAccess: "Acceso por navegador",
+                regionTag: "Italia / Francia / España",
+                firefoxExtension: "Extensión de Firefox",
+                chinaNote: "Usuarios de China: Usen cualquiera de los enlaces anteriores con una VPN.",
+                torAccess: "Acceso Tor",
+                torIntro: "Descargar",
+                torThen: "luego visite:",
+                backupTag: "Respaldo",
+                appsTitle: "Aplicaciones y Bot de Telegram",
+                desktopApp: "Escritorio / Android",
+                telegramBot: "Bot de Telegram",
+                typeHeader: "Tipo",
+                downloadsHeader: "Descargas por día",
+                guest: "Invitado",
+                freeAccount: "Cuenta gratuita",
+                accountTelegram: "Cuenta + Telegram",
+                premiumTrial: "Las cuentas nuevas obtienen 2 semanas de prueba premium.",
+                fakeSitesTitle: "Sitios falsos - NO visitar",
+                fakeSitesIntro: "Estos dominios roban credenciales y cobran tarifas falsas:",
+                paymentWarning: "Si un sitio solicita pagos o donaciones, NO es el verdadero Z-Library.",
+                dir: "ltr"
+            },
+            fr: {
+                subtitle: "Liens vérifiés pour accéder à Z-Library",
+                browserAccess: "Accès navigateur",
+                regionTag: "Italie / France / Espagne",
+                firefoxExtension: "Extension Firefox",
+                chinaNote: "Utilisateurs en Chine : utilisez n'importe quel lien ci-dessus avec un VPN.",
+                torAccess: "Accès Tor",
+                torIntro: "Télécharger",
+                torThen: "puis visitez :",
+                backupTag: "Sauvegarde",
+                appsTitle: "Applications et Bot Telegram",
+                desktopApp: "Bureau / Android",
+                telegramBot: "Bot Telegram",
+                typeHeader: "Type",
+                downloadsHeader: "Téléchargements par jour",
+                guest: "Invité",
+                freeAccount: "Compte gratuit",
+                accountTelegram: "Compte + Telegram",
+                premiumTrial: "Les nouveaux comptes bénéficient de 2 semaines d'essai premium.",
+                fakeSitesTitle: "Sites faux - NE PAS visiter",
+                fakeSitesIntro: "Ces domaines volent vos identifiants et facturent de faux frais :",
+                paymentWarning: "Si un site demande un paiement ou un don, ce n'est PAS le vrai Z-Library.",
+                dir: "ltr"
+            },
+            de: {
+                subtitle: "Verifizierte Zugriffslinks für Z-Library",
+                browserAccess: "Browser-Zugriff",
+                regionTag: "Italien / Frankreich / Spanien",
+                firefoxExtension: "Firefox-Erweiterung",
+                chinaNote: "Nutzer aus China: Verwenden Sie einen der obigen Links mit einem VPN.",
+                torAccess: "Tor-Zugriff",
+                torIntro: "Herunterladen",
+                torThen: "besuchen Sie dann:",
+                backupTag: "Sicherung",
+                appsTitle: "Apps & Telegram-Bot",
+                desktopApp: "Desktop / Android",
+                telegramBot: "Telegram-Bot",
+                typeHeader: "Typ",
+                downloadsHeader: "Downloads pro Tag",
+                guest: "Gast",
+                freeAccount: "Kostenloses Konto",
+                accountTelegram: "Konto + Telegram",
+                premiumTrial: "Neue Konten erhalten 2 Wochen Premium-Test.",
+                fakeSitesTitle: "Falsche Seiten - NICHT besuchen",
+                fakeSitesIntro: "Diese Seiten stohlen Anmeldedaten und verlangen gefälschte Gebühren:",
+                paymentWarning: "Wenn eine Seite Zahlungen oder Spenden verlangt, ist es NICHT das echte Z-Library.",
+                dir: "ltr"
+            },
+            it: {
+                subtitle: "Link verificati per accedere a Z-Library",
+                browserAccess: "Accesso browser",
+                regionTag: "Italia / Francia / Spagna",
+                firefoxExtension: "Estensione Firefox",
+                chinaNote: "Utenti in Cina: usate uno dei link sopra con una VPN.",
+                torAccess: "Accesso Tor",
+                torIntro: "Scaricare",
+                torThen: "poi visitate:",
+                backupTag: "Backup",
+                appsTitle: "App e Bot Telegram",
+                desktopApp: "Desktop / Android",
+                telegramBot: "Bot Telegram",
+                typeHeader: "Tipo",
+                downloadsHeader: "Download al giorno",
+                guest: "Ospite",
+                freeAccount: "Account gratuito",
+                accountTelegram: "Account + Telegram",
+                premiumTrial: "I nuovi account ottengono 2 settimane di prova premium.",
+                fakeSitesTitle: "Siti falsi - NON visitare",
+                fakeSitesIntro: "Questi domini rubano le credenziali e richiedono pagamenti falsi:",
+                paymentWarning: "Se un sito chiede pagamenti o donazioni, NON è il vero Z-Library.",
+                dir: "ltr"
+            },
+            ja: {
+                subtitle: "検証済み Z-Library アクセスリンク",
+                browserAccess: "ブラウザーアクセス",
+                regionTag: "イタリア / フランス / スペイン",
+                firefoxExtension: "Firefox 拡張機能",
+                chinaNote: "中国からのユーザー：上記のリンクをVPNと併用してください。",
+                torAccess: "Tor アクセス",
+                torIntro: "ダウンロード",
+                torThen: "してから訪問：",
+                backupTag: "バックアップ",
+                appsTitle: "アプリと Telegram ボット",
+                desktopApp: "デスクトップ / Android",
+                telegramBot: "Telegram ボット",
+                typeHeader: "タイプ",
+                downloadsHeader: "1日のダウンロード数",
+                guest: "ゲスト",
+                freeAccount: "無料アカウント",
+                accountTelegram: "アカウント + Telegram",
+                premiumTrial: "新規アカウントは2週間のプレミアム試用が可能です。",
+                fakeSitesTitle: "偽サイト - アクセスしないでください",
+                fakeSitesIntro: "これらのドメインはログイン情報を盗み、不正な課金を要求します：",
+                paymentWarning: "支払いや寄付を求めるサイトは、本物の Z-Library ではありません。",
+                dir: "ltr"
+            },
+            ko: {
+                subtitle: "검증된 Z-Library 액세스 링크",
+                browserAccess: "브라우저 액세스",
+                regionTag: "이탈리아 / 프랑스 / 스페인",
+                firefoxExtension: "Firefox 확장",
+                chinaNote: "중국 사용자: 위의 링크를 VPN과 함께 사용하세요.",
+                torAccess: "Tor 액세스",
+                torIntro: "다운로드",
+                torThen: "후 방문:",
+                backupTag: "백업",
+                appsTitle: "앱 및 Telegram 봇",
+                desktopApp: "데스크톱 / Android",
+                telegramBot: "Telegram 봇",
+                typeHeader: "유형",
+                downloadsHeader: "일일 다운로드",
+                guest: "게스트",
+                freeAccount: "무료 계정",
+                accountTelegram: "계정 + Telegram",
+                premiumTrial: "새 계정은 2주간 프리미엄 체험을 받습니다.",
+                fakeSitesTitle: "가짜 사이트 - 접속하지 마세요",
+                fakeSitesIntro: "이러한 도메인은 자격 증명을 훔치고 가짜 수수료를 청구합니다:",
+                paymentWarning: "결제나 기부를 요구하는 사이트는 진짜 Z-Library가 아닙니다.",
+                dir: "ltr"
+            },
+            ru: {
+                subtitle: "Проверенные ссылки для доступа к Z-Library",
+                browserAccess: "Доступ через браузер",
+                regionTag: "Италия / Франция / Испания",
+                firefoxExtension: "Расширение Firefox",
+                chinaNote: "Пользователи из Китая: используйте любую из ссылок выше с VPN.",
+                torAccess: "Доступ через Tor",
+                torIntro: "Скачать",
+                torThen: "затем посетите:",
+                backupTag: "Резерв",
+                appsTitle: "Приложения и Telegram-бот",
+                desktopApp: "Десктоп / Android",
+                telegramBot: "Telegram-бот",
+                typeHeader: "Тип",
+                downloadsHeader: "Загрузки в день",
+                guest: "Гость",
+                freeAccount: "Бесплатный аккаунт",
+                accountTelegram: "Аккаунт + Telegram",
+                premiumTrial: "Новые аккаунты получают 2 недели премиум-пробной версии.",
+                fakeSitesTitle: "Поддельные сайты - НЕ посещать",
+                fakeSitesIntro: "Эти сайты крадут учётные данные и требуют поддельной оплаты:",
+                paymentWarning: "Если сайт просит оплату или пожертвование — это НЕ настоящий Z-Library.",
+                dir: "ltr"
+            },
+            ar: {
+                subtitle: "روابط تم التحقق منها للوصول إلى Z-Library",
+                browserAccess: "الوصول عبر المتصفح",
+                regionTag: "إيطاليا / فرنسا / إسبانيا",
+                firefoxExtension: "إضافة Firefox",
+                chinaNote: "المستخدمون من الصين: استخدم أي رابط أعلاه مع VPN.",
+                torAccess: "الوصول عبر Tor",
+                torIntro: "تحميل",
+                torThen: "ثم زوروا:",
+                backupTag: "نسخة احتياطية",
+                appsTitle: "التطبيقات وبوت Telegram",
+                desktopApp: "سطح المكتب / Android",
+                telegramBot: "بوت Telegram",
+                typeHeader: "النوع",
+                downloadsHeader: "التنزيلات يومياً",
+                guest: "زائر",
+                freeAccount: "حساب مجاني",
+                accountTelegram: "حساب + Telegram",
+                premiumTrial: "الحسابات الجديدة تحصل على تجربة premium لمدة أسبوعين.",
+                fakeSitesTitle: "مواقع مزيفة - لا تزوروها",
+                fakeSitesIntro: "هذه النطاقات تسرق بيانات الدخول وتفرض رسائلًا مزيفة:",
+                paymentWarning: "إذا طلب الموقع الدفع أو التبرع، فهذا ليس Z-Library الحقيقي.",
+                dir: "rtl"
+            }
+        };
+
+        // DOM elements
+        const langSelect = document.getElementById('langSelect');
+        const translatableElements = document.querySelectorAll('[data-i18n]');
+
+        // Load saved language preference
+        const savedLang = localStorage.getItem('zlibnow-lang') || 'en';
+        langSelect.value = savedLang;
+
+        // Set text direction for page
+        function setDirection(dir) {
+            document.documentElement.setAttribute('dir', dir);
+            document.documentElement.setAttribute('lang', langSelect.value);
+        }
+
+        // Apply translations
+        function applyTranslations(lang) {
+            const langData = translations[lang];
+            if (!langData) return;
+
+            setDirection(langData.dir);
+
+            translatableElements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (langData[key]) {
+                    element.textContent = langData[key];
+                }
+            });
+
+            // Save preference
+            localStorage.setItem('zlibnow-lang', lang);
+        }
+
+        // Initialize
+        applyTranslations(savedLang);
+
+        // Event listener
+        langSelect.addEventListener('change', () => {
+            applyTranslations(langSelect.value);
+        });
+    </script>
 </body>
 </html>
