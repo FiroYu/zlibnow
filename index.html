@@ -996,8 +996,15 @@
         const langSelect = document.getElementById('langSelect');
         const translatableElements = document.querySelectorAll('[data-i18n]');
 
-        // Load saved language preference
-        const savedLang = localStorage.getItem('zlibnow-lang') || 'en';
+        // Detect browser language
+        function detectBrowserLang() {
+            const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
+            const supported = ['en', 'zh', 'es', 'fr', 'de', 'it', 'ja', 'ko', 'ru', 'ar'];
+            return supported.includes(browserLang) ? browserLang : 'en';
+        }
+
+        // Load saved language preference, fallback to browser language
+        const savedLang = localStorage.getItem('zlibnow-lang') || detectBrowserLang();
         langSelect.value = savedLang;
 
         // Set text direction for page
