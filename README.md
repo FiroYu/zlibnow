@@ -10,13 +10,11 @@
 
 | | Link |
 |--|------|
-| 1 | <https://z-library.gs> |
-| 2 | <https://z-lib.fm> |
-| 3 | <https://1lib.sk> |
-| 4 | <https://z-lib.sk> |
-| 5 | <http://z-lib.gd> |
-| 6 | <http://z-lib.gl> |
-| 7 | <https://zliba.ru> |
+| 1 | <https://z-lib.fm> |
+| 2 | <https://1lib.sk> |
+| 3 | <https://z-lib.sk> |
+| 4 | <http://z-lib.gd> |
+| 5 | <http://z-lib.gl> |
 
 | Region | Link |
 |--------|------|
