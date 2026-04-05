@@ -6,45 +6,68 @@
     <title>ZLibNow - Z-Library Official Access Links</title>
     <meta name="description" content="Verified links to access the real Z-Library. Avoid fake sites.">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #f5f7fa;
+            font-family: 'Space Grotesk', -apple-system, sans-serif;
+            background: #FFF4E0;
             color: #1a1a2e;
             line-height: 1.6;
         }
+
         .container {
-            max-width: 720px;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
         }
+
+        /* ---- HEADER ---- */
         header {
             text-align: center;
             margin-bottom: 2rem;
         }
         header h1 {
-            font-size: 1.8rem;
-            color: #2563eb;
-            margin-bottom: 0.25rem;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #000;
+            display: inline-block;
+            background: #A8FF78;
+            padding: 0.2rem 1.2rem;
+            border: 3px solid #000;
+            box-shadow: 6px 6px 0 #000;
+            margin-bottom: 0.5rem;
         }
         header p {
-            color: #6b7280;
-            font-size: 0.9rem;
+            color: #333;
+            font-size: 1rem;
+            font-weight: 600;
         }
+
+        /* ---- SECTION CARD ---- */
         .section {
             background: #fff;
-            border-radius: 12px;
+            border: 3px solid #000;
+            box-shadow: 6px 6px 0 #000;
             padding: 1.5rem;
-            margin-bottom: 1.25rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            margin-bottom: 1.5rem;
         }
         .section h2 {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
             margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #e5e7eb;
-            color: #1e40af;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
         }
+        .section-title-blue { background: #78D6FF; }
+        .section-title-purple { background: #D4ADFC; }
+        .section-title-yellow { background: #FDFFAB; }
+        .section-title-green { background: #A8FF78; }
+
+        /* ---- LINKS GRID ---- */
         .links {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -53,109 +76,153 @@
         .links a {
             display: block;
             padding: 0.65rem 0.85rem;
-            background: #f0f7ff;
-            border: 1px solid #bfdbfe;
-            border-radius: 8px;
+            background: #fff;
+            border: 2px solid #000;
+            box-shadow: 4px 4px 0 #000;
             text-decoration: none;
-            color: #1e40af;
+            color: #000;
             font-weight: 600;
             font-size: 0.95rem;
-            transition: all 0.15s;
+            transition: all 0.1s;
         }
         .links a:hover {
-            background: #dbeafe;
-            border-color: #60a5fa;
-            transform: translateY(-1px);
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 #000;
+            background: #A8FF78;
         }
         .links.full { grid-template-columns: 1fr; }
+
         .tag {
             display: inline-block;
-            font-size: 0.75rem;
-            padding: 0.15rem 0.5rem;
-            border-radius: 4px;
+            font-size: 0.7rem;
+            padding: 0.1rem 0.45rem;
+            border: 1.5px solid #000;
             margin-left: 0.4rem;
-            font-weight: 500;
+            font-weight: 600;
             vertical-align: middle;
+            text-transform: uppercase;
         }
-        .tag-blue { background: #dbeafe; color: #1d4ed8; }
-        .tag-green { background: #dcfce7; color: #15803d; }
-        .tag-purple { background: #ede9fe; color: #6d28d9; }
+        .tag-blue { background: #78D6FF; }
+        .tag-green { background: #A8FF78; }
+        .tag-purple { background: #D4ADFC; }
+
+        /* ---- TOR ---- */
         .tor-link {
             display: block;
             padding: 0.65rem 0.85rem;
-            background: #f9fafb;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 0.82rem;
-            color: #374151;
+            background: #E8E8E8;
+            border: 2px solid #000;
+            box-shadow: 4px 4px 0 #000;
+            font-family: 'Courier New', monospace;
+            font-size: 0.78rem;
+            color: #000;
             text-decoration: none;
             word-break: break-all;
-            margin-bottom: 0.5rem;
-            transition: all 0.15s;
+            margin-bottom: 0.75rem;
+            transition: all 0.1s;
         }
-        .tor-link:hover { background: #f3f4f6; border-color: #9ca3af; }
+        .tor-link:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 #000;
+        }
+
+        /* ---- APP LINKS ---- */
+        .app-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .app-links a {
+            padding: 0.55rem 1rem;
+            background: #D4ADFC;
+            border: 2px solid #000;
+            box-shadow: 4px 4px 0 #000;
+            text-decoration: none;
+            color: #000;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.1s;
+        }
+        .app-links a:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 #000;
+        }
+
+        /* ---- TABLE ---- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.75rem;
+            border: 2px solid #000;
+        }
+        th, td {
+            text-align: left;
+            padding: 0.45rem 0.75rem;
+            border: 1px solid #000;
+            font-size: 0.9rem;
+        }
+        th { font-weight: 700; background: #FDFFAB; }
+        tr:nth-child(even) td { background: #f5f5f5; }
+
+        /* ---- WARNING ---- */
         .warning {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
-            border-radius: 12px;
-            padding: 1.25rem;
-            margin-bottom: 1.25rem;
+            background: #FF6B6B;
+            border: 3px solid #000;
+            box-shadow: 6px 6px 0 #000;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
         }
-        .warning h2 { color: #dc2626; border-bottom-color: #fecaca; }
+        .warning h2 {
+            color: #000;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+            background: #FDFFAB;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+        }
+        .warning p { color: #000; font-weight: 600; }
         .fake-list {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin: 0.5rem 0;
+            margin: 0.75rem 0;
         }
         .fake-list code {
             background: #fff;
-            padding: 0.25rem 0.75rem;
-            border-radius: 6px;
+            padding: 0.3rem 0.8rem;
+            border: 2px solid #000;
             text-decoration: line-through;
-            color: #dc2626;
-            font-size: 0.9rem;
+            color: #000;
+            font-size: 0.95rem;
+            font-weight: 700;
         }
+
         .note {
             font-size: 0.85rem;
-            color: #6b7280;
+            color: #444;
             margin-top: 0.75rem;
+            font-weight: 600;
         }
-        .app-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-        .app-links a {
-            padding: 0.5rem 1rem;
-            background: #f0f7ff;
-            border: 1px solid #bfdbfe;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #1e40af;
-            font-weight: 500;
-            transition: all 0.15s;
-        }
-        .app-links a:hover { background: #dbeafe; }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 0.5rem;
-        }
-        th, td {
-            text-align: left;
-            padding: 0.4rem 0.75rem;
-            border-bottom: 1px solid #f3f4f6;
-        }
-        th { font-weight: 600; color: #374151; font-size: 0.9rem; }
-        td { font-size: 0.9rem; color: #6b7280; }
+
+        /* ---- FOOTER ---- */
         footer {
             text-align: center;
             padding: 1.5rem 0;
-            color: #9ca3af;
-            font-size: 0.8rem;
+            color: #666;
+            font-size: 0.85rem;
+            font-weight: 600;
         }
-        footer a { color: #6b7280; }
-        @media (max-width: 480px) {
+
+        /* ---- MOBILE ---- */
+        @media (max-width: 520px) {
+            header h1 { font-size: 1.8rem; }
             .links { grid-template-columns: 1fr; }
-            header h1 { font-size: 1.4rem; }
+            .container { padding: 1.5rem 0.75rem; }
+            .section { padding: 1rem; box-shadow: 4px 4px 0 #000; }
+            .warning { box-shadow: 4px 4px 0 #000; }
+            .links a { box-shadow: 3px 3px 0 #000; }
+            .links a:hover { box-shadow: 1px 1px 0 #000; transform: translate(2px, 2px); }
+            .tor-link { box-shadow: 3px 3px 0 #000; }
+            .app-links a { box-shadow: 3px 3px 0 #000; }
         }
     </style>
 </head>
@@ -163,12 +230,12 @@
     <div class="container">
         <header>
             <h1>ZLibNow</h1>
-            <p>Verified Z-Library access links &mdash; Source: <a href="https://www.reddit.com/r/zlibrary/wiki/index/access/" style="color:#2563eb">r/zlibrary wiki</a></p>
+            <p>Verified Z-Library access links</p>
         </header>
 
         <!-- Browser Access -->
         <div class="section">
-            <h2>Browser Access</h2>
+            <h2 class="section-title-blue">Browser Access</h2>
             <div class="links">
                 <a href="https://z-library.gs" target="_blank" rel="noopener">z-library.gs</a>
                 <a href="https://z-lib.fm" target="_blank" rel="noopener">z-lib.fm</a>
@@ -179,34 +246,34 @@
                 <a href="https://zliba.ru" target="_blank" rel="noopener">zliba.ru</a>
             </div>
             <div class="links full" style="margin-top:0.75rem">
-                <a href="https://z-library.ec" target="_blank" rel="noopener">z-library.ec <span class="tag tag-blue">Italy / France / Spain</span></a>
+                <a href="https://z-library.ec" target="_blank" rel="noopener">z-library.ec <span class="tag tag-blue">IT / FR / ES</span></a>
             </div>
             <div class="links full">
-                <a href="https://go-to-library.sk/#browser_extensions_tab" target="_blank" rel="noopener">Firefox Extension <span class="tag tag-green">Auto-redirect</span></a>
+                <a href="https://go-to-library.sk/#browser_extensions_tab" target="_blank" rel="noopener">Firefox Extension <span class="tag tag-green">Auto</span></a>
             </div>
             <p class="note">China users: Use any link above with a VPN.</p>
         </div>
 
         <!-- Tor Access -->
         <div class="section">
-            <h2>Tor Access</h2>
-            <p style="margin-bottom:0.5rem;font-size:0.9rem;">Download <a href="https://www.torproject.org/download/" style="color:#2563eb">Tor Browser</a>, then visit:</p>
+            <h2 class="section-title-purple">Tor Access</h2>
+            <p style="margin-bottom:0.75rem;font-size:0.9rem;font-weight:600">Download <a href="https://www.torproject.org/download/" style="color:#000;text-decoration:underline;font-weight:700">Tor Browser</a>, then visit:</p>
             <a class="tor-link" href="http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion" target="_blank" rel="noopener">bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion</a>
             <a class="tor-link" href="http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion" target="_blank" rel="noopener">loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion <span class="tag tag-blue">Backup</span></a>
         </div>
 
         <!-- Apps & Telegram -->
         <div class="section">
-            <h2>Apps & Telegram Bot</h2>
+            <h2 class="section-title-yellow">Apps & Telegram Bot</h2>
             <div class="app-links">
-                <a href="https://go-to-library.sk/" target="_blank" rel="noopener">Desktop / Android App</a>
+                <a href="https://go-to-library.sk/" target="_blank" rel="noopener">Desktop / Android</a>
                 <a href="https://go-to-library.sk/#telegram_bot_tab" target="_blank" rel="noopener">Telegram Bot <span class="tag tag-purple">+10/day</span></a>
             </div>
-            <table style="margin-top:1rem">
+            <table>
                 <tr><th>Type</th><th>Downloads / Day</th></tr>
                 <tr><td>Guest</td><td>5</td></tr>
                 <tr><td>Free Account</td><td>10</td></tr>
-                <tr><td>Account + Telegram Bot</td><td>20</td></tr>
+                <tr><td>Account + Telegram</td><td>20</td></tr>
             </table>
             <p class="note">New accounts get a 2-week premium trial.</p>
         </div>
@@ -220,11 +287,11 @@
                 <code>z-lib.id</code>
                 <code>zlibrary.to</code>
             </div>
-            <p class="note" style="color:#b91c1c">If a site asks for payment or donation, it is NOT the real Z-Library.</p>
+            <p style="font-size:0.9rem;margin-top:0.5rem">If a site asks for payment or donation, it is NOT the real Z-Library.</p>
         </div>
 
         <footer>
-            <p>Link source: <a href="https://www.reddit.com/r/zlibrary/wiki/index/access/">r/zlibrary wiki</a></p>
+            <p>zlibnow.com</p>
         </footer>
     </div>
 </body>
