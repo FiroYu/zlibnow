@@ -21,13 +21,15 @@
             --shadow-heavy: 9px 9px 0 #000;
             --shadow-hover: 3px 3px 0 #000;
             --border: 3px solid #000;
-            --bg-cream: #FFF4E0;
+            --bg-cream: #FAFEFF;
             --bg-white: #FFFFFF;
-            --blue: #78D6FF;
-            --purple: #D4ADFC;
-            --yellow: #FDFFAB;
-            --green: #A8FF78;
-            --red: #FF5252;
+            --blue: #49AFD0;
+            --blue-light: #E6F7FF;
+            --green: #8EB46A;
+            --green-light: #D5E8C0;
+            --yellow: #FAAD14;
+            --yellow-light: #FFF8E1;
+            --red: #FF4D4F;
             --gray-light: #F5F5F5;
             --gray-medium: #E8E8E8;
         }
@@ -38,32 +40,31 @@
             font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: var(--bg-cream);
             background-image:
-                radial-gradient(circle, #ddd 1px, transparent 1px);
+                radial-gradient(circle, #c8dfe8 1px, transparent 1px);
             background-size: 20px 20px;
-            color: #1a1a2e;
+            color: #434343;
             line-height: 1.6;
             min-height: 100vh;
             padding-bottom: 2rem;
         }
 
-        /* Language Switcher */
+        /* Language Switcher - inline with header */
         .lang-switcher {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            z-index: 100;
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 0.5rem;
         }
 
         .lang-switcher select {
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.8rem;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            background: var(--yellow);
-            border: var(--border);
-            box-shadow: var(--shadow-light);
+            background: var(--blue-light);
+            border: 2px solid #000;
+            box-shadow: 3px 3px 0 #000;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: background 0.2s ease;
             border-radius: 0;
             appearance: none;
             -webkit-appearance: none;
@@ -71,35 +72,34 @@
         }
 
         .lang-switcher select:hover {
-            transform: translate(2px, 2px);
-            box-shadow: var(--shadow-hover);
+            background: #d0efff;
         }
 
-        .lang-switcher select:focus {
+        .lang-switcher select:focus,
+        .lang-switcher select:active {
             outline: none;
-            box-shadow: var(--shadow-medium);
+            box-shadow: 3px 3px 0 #000;
         }
 
         /* Container */
         .container {
             max-width: 720px;
             margin: 0 auto;
-            padding: 4rem 1.5rem 2rem;
+            padding: 1.5rem 1.5rem 2rem;
         }
 
         /* Header */
         header {
             text-align: center;
             margin-bottom: 2.5rem;
-            padding-top: 1rem;
         }
 
         header h1 {
             font-size: 3rem;
             font-weight: 700;
-            color: #000;
+            color: #fff;
             display: inline-block;
-            background: var(--green);
+            background: var(--blue);
             padding: 0.4rem 1.8rem;
             border: var(--border);
             box-shadow: var(--shadow-medium);
@@ -114,7 +114,7 @@
         }
 
         header p {
-            color: #333;
+            color: #434343;
             font-size: 1.1rem;
             font-weight: 500;
             letter-spacing: 0.5px;
@@ -148,10 +148,10 @@
             box-shadow: 3px 3px 0 #000;
         }
 
-        .section-title-blue { background: var(--blue); }
-        .section-title-purple { background: var(--purple); }
-        .section-title-yellow { background: var(--yellow); }
-        .section-title-green { background: var(--green); }
+        .section-title-blue { background: var(--blue-light); color: #434343; }
+        .section-title-purple { background: var(--green-light); color: #434343; }
+        .section-title-yellow { background: var(--yellow-light); color: #434343; }
+        .section-title-green { background: var(--blue-light); color: #434343; }
 
         /* Links Grid */
         .links {
@@ -183,7 +183,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(168, 255, 120, 0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(73, 175, 208, 0.15), transparent);
             transition: left 0.4s ease;
         }
 
@@ -194,7 +194,7 @@
         .links a:hover {
             transform: translate(3px, 3px) rotate(-1deg);
             box-shadow: var(--shadow-hover);
-            background: var(--green);
+            background: var(--blue-light);
         }
 
         .links.full { grid-template-columns: 1fr; }
@@ -212,10 +212,10 @@
             letter-spacing: 0.05em;
         }
 
-        .tag-blue { background: var(--blue); }
-        .tag-green { background: var(--green); }
-        .tag-purple { background: var(--purple); }
-        .tag-red { background: var(--red); }
+        .tag-blue { background: var(--blue); color: #fff; }
+        .tag-green { background: var(--green); color: #fff; }
+        .tag-purple { background: var(--yellow); color: #000; }
+        .tag-red { background: var(--red); color: #fff; }
 
         /* Tor Links */
         .tor-link {
@@ -230,7 +230,7 @@
             text-decoration: none;
             word-break: break-all;
             margin-bottom: 0.875rem;
-            transition: all 0.2s ease;
+            transition: background 0.2s ease;
             transform-style: preserve-3d;
         }
 
@@ -253,11 +253,11 @@
 
         .app-links a {
             padding: 0.65rem 1.25rem;
-            background: var(--purple);
+            background: var(--blue);
             border: 2px solid #000;
             box-shadow: 4px 4px 0 #000;
             text-decoration: none;
-            color: #000;
+            color: #fff;
             font-weight: 600;
             font-size: 0.95rem;
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -267,7 +267,7 @@
         .app-links a:hover {
             transform: translate(3px, 3px) rotate(-1deg);
             box-shadow: var(--shadow-hover);
-            background: #c49ef0;
+            background: #3a9aba;
         }
 
         /* Table */
@@ -288,9 +288,10 @@
 
         th {
             font-weight: 700;
-            background: var(--yellow);
+            background: var(--yellow-light);
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            color: #434343;
         }
 
         tr:nth-child(even) td {
@@ -308,7 +309,7 @@
             margin-top: 1rem;
             font-weight: 500;
             padding-left: 0.5rem;
-            border-left: 3px solid var(--purple);
+            border-left: 3px solid var(--blue);
         }
 
         /* Warning Section */
@@ -340,13 +341,13 @@
         }
 
         .warning h2 {
-            color: #000;
+            color: #434343;
             font-size: 1.25rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             margin-bottom: 1rem;
-            background: var(--yellow);
+            background: var(--yellow-light);
             padding: 0.4rem 1rem;
             display: inline-block;
             border: 2px solid #000;
@@ -356,7 +357,7 @@
         }
 
         .warning p {
-            color: #000;
+            color: #fff;
             font-weight: 600;
             position: relative;
             z-index: 1;
@@ -380,7 +381,7 @@
             font-size: 0.95rem;
             font-weight: 700;
             box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
-            transition: all 0.2s ease;
+            transition: background 0.2s ease;
         }
 
         .fake-list code:hover {
@@ -401,11 +402,12 @@
             color: #000;
             text-decoration: none;
             border-bottom: 2px solid var(--green);
-            transition: all 0.2s ease;
+            transition: background 0.2s ease;
         }
 
         footer a:hover {
-            background: var(--green);
+            background: var(--blue-light);
+            color: #434343;
         }
 
         /* RTL Support */
@@ -419,8 +421,7 @@
         }
 
         [dir="rtl"] .lang-switcher {
-            right: auto;
-            left: 1rem;
+            justify-content: flex-start;
         }
 
         /* Mobile */
@@ -435,7 +436,7 @@
             }
 
             .container {
-                padding: 3rem 1rem 1.5rem;
+                padding: 1rem 1rem 1.5rem;
             }
 
             .section {
@@ -465,16 +466,6 @@
                 display: block;
                 text-align: center;
             }
-
-            .lang-switcher {
-                top: 0.5rem;
-                right: 0.5rem;
-            }
-
-            [dir="rtl"] .lang-switcher {
-                right: auto;
-                left: 0.5rem;
-            }
         }
 
         @media (max-width: 480px) {
@@ -498,8 +489,8 @@
 
         /* Selection */
         ::selection {
-            background: var(--green);
-            color: #000;
+            background: var(--blue);
+            color: #fff;
         }
 
         /* Focus */
@@ -511,22 +502,21 @@
     </style>
 </head>
 <body>
-    <div class="lang-switcher">
-        <select id="langSelect" aria-label="Select language">
-            <option value="en">English</option>
-            <option value="zh">中文</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-            <option value="de">Deutsch</option>
-            <option value="it">Italiano</option>
-            <option value="ja">日本語</option>
-            <option value="ko">한국어</option>
-            <option value="ru">Русский</option>
-            <option value="ar">العربية</option>
-        </select>
-    </div>
-
     <div class="container">
+        <div class="lang-switcher">
+            <select id="langSelect" aria-label="Select language">
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+                <option value="ru">Русский</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
         <header>
             <h1>ZLibNow</h1>
             <p data-i18n="subtitle">Verified Z-Library access links</p>
@@ -536,19 +526,19 @@
         <div class="section">
             <h2 class="section-title-blue" data-i18n="browserAccess">Browser Access</h2>
             <div class="links">
-                <a href="https://z-library.gs" target="_blank" rel="noopener">z-library.gs</a>
-                <a href="https://z-lib.fm" target="_blank" rel="noopener">z-lib.fm</a>
-                <a href="https://1lib.sk" target="_blank" rel="noopener">1lib.sk</a>
-                <a href="https://z-lib.sk" target="_blank" rel="noopener">z-lib.sk</a>
-                <a href="http://z-lib.gd" target="_blank" rel="noopener">z-lib.gd</a>
-                <a href="http://z-lib.gl" target="_blank" rel="noopener">z-lib.gl</a>
-                <a href="https://zliba.ru" target="_blank" rel="noopener">zliba.ru</a>
+                <a href="https://z-library.gs" target="_blank" rel="noopener noreferrer">z-library.gs</a>
+                <a href="https://z-lib.fm" target="_blank" rel="noopener noreferrer">z-lib.fm</a>
+                <a href="https://1lib.sk" target="_blank" rel="noopener noreferrer">1lib.sk</a>
+                <a href="https://z-lib.sk" target="_blank" rel="noopener noreferrer">z-lib.sk</a>
+                <a href="http://z-lib.gd" target="_blank" rel="noopener noreferrer">z-lib.gd</a>
+                <a href="http://z-lib.gl" target="_blank" rel="noopener noreferrer">z-lib.gl</a>
+                <a href="https://zliba.ru" target="_blank" rel="noopener noreferrer">zliba.ru</a>
             </div>
             <div class="links full" style="margin-top: 1rem">
-                <a href="https://z-library.ec" target="_blank" rel="noopener">z-library.ec <span class="tag tag-blue" data-i18n="regionTag">IT / FR / ES</span></a>
+                <a href="https://z-library.ec" target="_blank" rel="noopener noreferrer">z-library.ec <span class="tag tag-blue" data-i18n="regionTag">IT / FR / ES</span></a>
             </div>
             <div class="links full">
-                <a href="https://go-to-library.sk/#browser_extensions_tab" target="_blank" rel="noopener"><span data-i18n="firefoxExtension">Firefox Extension</span> <span class="tag tag-green">Auto</span></a>
+                <a href="https://go-to-library.sk/#browser_extensions_tab" target="_blank" rel="noopener noreferrer"><span data-i18n="firefoxExtension">Firefox Extension</span> <span class="tag tag-green">Auto</span></a>
             </div>
             <p class="note" data-i18n="chinaNote">China users: Use any link above with a VPN.</p>
         </div>
@@ -557,18 +547,18 @@
         <div class="section">
             <h2 class="section-title-purple" data-i18n="torAccess">Tor Access</h2>
             <p style="margin-bottom: 1rem; font-size: 0.9rem; font-weight: 600">
-                <span data-i18n="torIntro">Download</span> <a href="https://www.torproject.org/download/" style="color: #000; text-decoration: underline; font-weight: 700;" target="_blank" rel="noopener">Tor Browser</a>, <span data-i18n="torThen">then visit:</span>
+                <span data-i18n="torIntro">Download</span> <a href="https://www.torproject.org/download/" style="color: #000; text-decoration: underline; font-weight: 700;" target="_blank" rel="noopener noreferrer">Tor Browser</a>, <span data-i18n="torThen">then visit:</span>
             </p>
-            <a class="tor-link" href="http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion" target="_blank" rel="noopener">bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion</a>
-            <a class="tor-link" href="http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion" target="_blank" rel="noopener">loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion <span class="tag tag-blue" data-i18n="backupTag">Backup</span></a>
+            <a class="tor-link" href="http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion" target="_blank" rel="noopener noreferrer">bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion</a>
+            <a class="tor-link" href="http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion" target="_blank" rel="noopener noreferrer">loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion <span class="tag tag-blue" data-i18n="backupTag">Backup</span></a>
         </div>
 
         <!-- Apps & Telegram -->
         <div class="section">
             <h2 class="section-title-yellow" data-i18n="appsTitle">Apps & Telegram Bot</h2>
             <div class="app-links">
-                <a href="https://go-to-library.sk/" target="_blank" rel="noopener" data-i18n="desktopApp">Desktop / Android</a>
-                <a href="https://go-to-library.sk/#telegram_bot_tab" target="_blank" rel="noopener"><span data-i18n="telegramBot">Telegram Bot</span> <span class="tag tag-purple">+10/day</span></a>
+                <a href="https://go-to-library.sk/" target="_blank" rel="noopener noreferrer" data-i18n="desktopApp">Desktop / Android</a>
+                <a href="https://go-to-library.sk/#telegram_bot_tab" target="_blank" rel="noopener noreferrer"><span data-i18n="telegramBot">Telegram Bot</span> <span class="tag tag-purple">+10/day</span></a>
             </div>
             <table>
                 <tr>
@@ -604,7 +594,7 @@
         </div>
 
         <footer>
-            <p><a href="https://zlibnow.com" target="_blank" rel="noopener">zlibnow.com</a></p>
+            <p><a href="https://zlibnow.com" target="_blank" rel="noopener noreferrer">zlibnow.com</a></p>
         </footer>
     </div>
 
