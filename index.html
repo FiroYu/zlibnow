@@ -35,10 +35,12 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="ZLibNow">
     <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://zlibnow.com/og-image.png">
     <!-- Twitter Card tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ZLibNow - Z-Library Official Access Links">
     <meta name="twitter:description" content="Verified links to access the real Z-Library. Avoid fake sites.">
+    <meta name="twitter:image" content="https://zlibnow.com/og-image.png">
     <meta name="twitter:site" content="@zlibnow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -229,6 +231,7 @@
         }
 
         .links.full { grid-template-columns: 1fr; }
+        .links + .links { margin-top: 0.875rem; }
 
         /* Tags */
         .tag {
@@ -243,10 +246,10 @@
             letter-spacing: 0.05em;
         }
 
-        .tag-blue { background: var(--blue); color: #fff; }
-        .tag-green { background: var(--green); color: #fff; }
-        .tag-purple { background: #9B59B6; color: #fff; }
-        .tag-red { background: var(--red); color: #fff; }
+        .tag-blue { background: #2A7A96; color: #fff; }
+        .tag-green { background: #5F8A3C; color: #fff; }
+        .tag-purple { background: #7D3E9E; color: #fff; }
+        .tag-red { background: #D93025; color: #fff; }
 
         /* Tor Links */
         .tor-link {
@@ -261,14 +264,13 @@
             text-decoration: none;
             word-break: break-all;
             margin-bottom: 0.875rem;
-            transition: background 0.2s ease;
-            transform-style: preserve-3d;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .tor-link:hover {
             transform: translate(3px, 3px);
             box-shadow: var(--shadow-hover);
-            background: var(--gray-medium);
+            background: var(--gray-light);
         }
 
         .tor-link .tag {
@@ -455,6 +457,148 @@
             justify-content: flex-start;
         }
 
+        [dir="rtl"] .links a::before {
+            left: auto;
+            right: -100%;
+        }
+
+        [dir="rtl"] .links a:hover::before {
+            right: 100%;
+        }
+
+        [dir="rtl"] .note {
+            padding-left: 0;
+            padding-right: 0.5rem;
+            border-left: none;
+            border-right: 3px solid var(--blue);
+        }
+
+        [dir="rtl"] th,
+        [dir="rtl"] td {
+            text-align: right;
+        }
+
+        /* Utility Classes */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        .tor-intro {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .warning-note {
+            font-size: 0.9rem;
+            margin-top: 0.75rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Table Wrapper for mobile scroll */
+        .table-wrap {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* WeChat Browser Overlay */
+        .wechat-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .wechat-overlay.active {
+            display: flex;
+        }
+
+        .wechat-card {
+            background: #fff;
+            border: 3px solid #000;
+            box-shadow: 8px 8px 0 #000;
+            padding: 2.5rem 2rem;
+            max-width: 380px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        .wechat-card .arrow {
+            position: absolute;
+            top: -50px;
+            right: 20px;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 25px solid #fff;
+            filter: drop-shadow(0 -3px 0 #000);
+        }
+
+        .wechat-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 1rem;
+        }
+
+        .wechat-card p {
+            font-size: 0.95rem;
+            color: #434343;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .wechat-card .steps {
+            text-align: left;
+            background: var(--blue-light);
+            border: 2px solid #000;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .wechat-card .steps li {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 0.5rem;
+            list-style: decimal;
+        }
+
+        .wechat-card .steps li:last-child {
+            margin-bottom: 0;
+        }
+
+        .wechat-close {
+            background: var(--blue);
+            color: #fff;
+            border: 2px solid #000;
+            box-shadow: 3px 3px 0 #000;
+            padding: 0.6rem 2rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .wechat-close:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0 #000;
+        }
+
         /* Mobile */
         @media (max-width: 640px) {
             header h1 {
@@ -497,6 +641,15 @@
                 display: block;
                 text-align: center;
             }
+
+            .links a:hover {
+                transform: none;
+                box-shadow: 4px 4px 0 #000;
+            }
+
+            .table-wrap {
+                overflow-x: auto;
+            }
         }
 
         @media (max-width: 480px) {
@@ -533,7 +686,22 @@
     </style>
 </head>
 <body>
+    <!-- WeChat Browser Overlay -->
+    <div class="wechat-overlay" id="wechatOverlay">
+        <div class="wechat-card">
+            <div class="arrow"></div>
+            <h3 id="wechatTitle">请在浏览器中打开</h3>
+            <p id="wechatDesc">当前为微信内置浏览器，部分功能可能受限。请按以下步骤操作：</p>
+            <ol class="steps" id="wechatSteps">
+                <li id="wechatStep1">点击右上角 「···」 按钮</li>
+                <li id="wechatStep2">选择 「在浏览器中打开」</li>
+            </ol>
+            <button class="wechat-close" id="wechatClose">我知道了</button>
+        </div>
+    </div>
+
     <div class="container">
+        <main>
         <div class="lang-switcher">
             <select id="langSelect" aria-label="Select language">
                 <option value="en">English</option>
@@ -557,17 +725,17 @@
         <div class="section">
             <h2 class="section-title-blue" data-i18n="browserAccess">Browser Access</h2>
             <div class="links">
-                <a href="https://z-lib.fm" target="_blank" rel="noopener noreferrer">z-lib.fm</a>
-                <a href="https://1lib.sk" target="_blank" rel="noopener noreferrer">1lib.sk</a>
-                <a href="https://z-lib.sk" target="_blank" rel="noopener noreferrer">z-lib.sk</a>
-                <a href="http://z-lib.gd" target="_blank" rel="noopener noreferrer">z-lib.gd</a>
-                <a href="http://z-lib.gl" target="_blank" rel="noopener noreferrer">z-lib.gl</a>
-            </div>
-            <div class="links full" style="margin-top: 1rem">
-                <a href="https://z-library.ec" target="_blank" rel="noopener noreferrer">z-library.ec <span class="tag tag-blue" data-i18n="regionTag">IT / FR / ES</span></a>
+                <a href="https://z-lib.fm" target="_blank" rel="noopener noreferrer">z-lib.fm <span class="visually-hidden">(opens in new tab)</span></a>
+                <a href="https://1lib.sk" target="_blank" rel="noopener noreferrer">1lib.sk <span class="visually-hidden">(opens in new tab)</span></a>
+                <a href="https://z-lib.sk" target="_blank" rel="noopener noreferrer">z-lib.sk <span class="visually-hidden">(opens in new tab)</span></a>
+                <a href="http://z-lib.gd" target="_blank" rel="noopener noreferrer">z-lib.gd <span class="visually-hidden">(opens in new tab)</span></a>
+                <a href="http://z-lib.gl" target="_blank" rel="noopener noreferrer">z-lib.gl <span class="visually-hidden">(opens in new tab)</span></a>
             </div>
             <div class="links full">
-                <a href="https://go-to-library.sk/#browser_extensions_tab" target="_blank" rel="noopener noreferrer"><span data-i18n="firefoxExtension">Firefox Extension</span> <span class="tag tag-green">Auto</span></a>
+                <a href="https://z-library.ec" target="_blank" rel="noopener noreferrer">z-library.ec <span class="tag tag-blue" data-i18n="regionTag">IT / FR / ES</span> <span class="visually-hidden">(opens in new tab)</span></a>
+            </div>
+            <div class="links full">
+                <a href="https://go-to-library.sk/#browser_extensions_tab" target="_blank" rel="noopener noreferrer"><span data-i18n="firefoxExtension">Firefox Extension</span> <span class="tag tag-green">Auto</span> <span class="visually-hidden">(opens in new tab)</span></a>
             </div>
             <p class="note" data-i18n="chinaNote">China users: Use any link above with a VPN.</p>
         </div>
@@ -575,38 +743,44 @@
         <!-- Tor Access -->
         <div class="section">
             <h2 class="section-title-green" data-i18n="torAccess">Tor Access</h2>
-            <p style="margin-bottom: 1rem; font-size: 0.9rem; font-weight: 600">
+            <p class="tor-intro">
                 <span data-i18n="torIntro">Download</span> <a href="https://www.torproject.org/download/" style="color: #000; text-decoration: underline; font-weight: 700;" target="_blank" rel="noopener noreferrer">Tor Browser</a>, <span data-i18n="torThen">then visit:</span>
             </p>
-            <a class="tor-link" href="http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion" target="_blank" rel="noopener noreferrer">bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion</a>
-            <a class="tor-link" href="http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion" target="_blank" rel="noopener noreferrer">loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion <span class="tag tag-blue" data-i18n="backupTag">Backup</span></a>
+            <a class="tor-link" href="http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion" target="_blank" rel="noopener noreferrer">bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion <span class="visually-hidden">(opens in new tab)</span></a>
+            <a class="tor-link" href="http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion" target="_blank" rel="noopener noreferrer">loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion <span class="tag tag-blue" data-i18n="backupTag">Backup</span> <span class="visually-hidden">(opens in new tab)</span></a>
         </div>
 
         <!-- Apps & Telegram -->
         <div class="section">
             <h2 class="section-title-yellow" data-i18n="appsTitle">Apps & Telegram Bot</h2>
             <div class="app-links">
-                <a href="https://go-to-library.sk/" target="_blank" rel="noopener noreferrer" data-i18n="desktopApp">Desktop / Android</a>
-                <a href="https://go-to-library.sk/#telegram_bot_tab" target="_blank" rel="noopener noreferrer"><span data-i18n="telegramBot">Telegram Bot</span> <span class="tag tag-purple">+10/day</span></a>
+                <a href="https://go-to-library.sk/" target="_blank" rel="noopener noreferrer" data-i18n="desktopApp">Desktop / Android</a> <span class="visually-hidden">(opens in new tab)</span>
+                <a href="https://go-to-library.sk/#telegram_bot_tab" target="_blank" rel="noopener noreferrer"><span data-i18n="telegramBot">Telegram Bot</span> <span class="tag tag-purple">+10/day</span> <span class="visually-hidden">(opens in new tab)</span></a>
             </div>
+            <div class="table-wrap">
             <table>
-                <tr>
-                    <th data-i18n="typeHeader">Type</th>
-                    <th data-i18n="downloadsHeader">Downloads / Day</th>
-                </tr>
-                <tr>
-                    <td data-i18n="guest">Guest</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td data-i18n="freeAccount">Free Account</td>
-                    <td>10</td>
-                </tr>
-                <tr>
-                    <td data-i18n="accountTelegram">Account + Telegram</td>
-                    <td>20</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th data-i18n="typeHeader">Type</th>
+                        <th data-i18n="downloadsHeader">Downloads / Day</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-i18n="guest">Guest</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="freeAccount">Free Account</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="accountTelegram">Account + Telegram</td>
+                        <td>20</td>
+                    </tr>
+                </tbody>
             </table>
+            </div>
             <p class="note" data-i18n="premiumTrial">New accounts get a 2-week premium trial.</p>
         </div>
 
@@ -619,12 +793,13 @@
                 <code>z-lib.id</code>
                 <code>zlibrary.to</code>
             </div>
-            <p style="font-size: 0.9rem; margin-top: 0.75rem; position: relative; z-index: 1;" data-i18n="paymentWarning">If a site asks for payment or donation, it is NOT the real Z-Library.</p>
+            <p class="warning-note" data-i18n="paymentWarning">If a site asks for payment or donation, it is NOT the real Z-Library.</p>
         </div>
 
         <footer>
-            <p><a href="https://zlibnow.com" target="_blank" rel="noopener noreferrer">zlibnow.com</a></p>
+            <p><a href="https://zlibnow.com" target="_blank" rel="noopener noreferrer">zlibnow.com <span class="visually-hidden">(opens in new tab)</span></a></p>
         </footer>
+        </main>
     </div>
 
     <script>
@@ -874,7 +1049,7 @@
                 accountTelegram: "Konto + Telegram",
                 premiumTrial: "Neue Konten erhalten 2 Wochen Premium-Test.",
                 fakeSitesTitle: "Falsche Seiten - NICHT besuchen",
-                fakeSitesIntro: "Diese Seiten stohlen Anmeldedaten und verlangen gefälschte Gebühren:",
+                fakeSitesIntro: "Diese Seiten stehlen Anmeldedaten und verlangen gefälschte Gebühren:",
                 paymentWarning: "Wenn eine Seite Zahlungen oder Spenden verlangt, ist es NICHT das echte Z-Library.",
                 dir: "ltr"
             },
@@ -1004,21 +1179,38 @@
         const langSelect = document.getElementById('langSelect');
         const translatableElements = document.querySelectorAll('[data-i18n]');
 
+        // Unified language code mapping
+        const langCodeMap = {
+            en: 'en', zh: 'zh-CN', es: 'es', fr: 'fr',
+            de: 'de', it: 'it', ja: 'ja', ko: 'ko',
+            ru: 'ru', ar: 'ar'
+        };
+
         // Detect browser language
         function detectBrowserLang() {
             const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
-            const supported = ['en', 'zh', 'es', 'fr', 'de', 'it', 'ja', 'ko', 'ru', 'ar'];
+            const supported = Object.keys(translations);
             return supported.includes(browserLang) ? browserLang : 'en';
         }
 
-        // Load saved language preference, fallback to browser language
-        const savedLang = localStorage.getItem('zlibnow-lang') || detectBrowserLang();
+        // Load saved language preference with validation and error handling
+        let savedLang = 'en';
+        try {
+            const stored = localStorage.getItem('zlibnow-lang');
+            if (stored && translations[stored]) {
+                savedLang = stored;
+            } else {
+                savedLang = detectBrowserLang();
+            }
+        } catch (e) {
+            savedLang = detectBrowserLang();
+        }
         langSelect.value = savedLang;
 
         // Set text direction for page
         function setDirection(dir, lang) {
             document.documentElement.setAttribute('dir', dir);
-            document.documentElement.setAttribute('lang', lang);
+            document.documentElement.setAttribute('lang', langCodeMap[lang] || lang);
         }
 
         // Apply translations
@@ -1039,7 +1231,9 @@
             updateSEO(lang);
 
             // Save preference
-            localStorage.setItem('zlibnow-lang', lang);
+            try {
+                localStorage.setItem('zlibnow-lang', lang);
+            } catch (e) { /* ignore storage errors */ }
         }
 
         // Initialize
@@ -1049,6 +1243,34 @@
         langSelect.addEventListener('change', () => {
             applyTranslations(langSelect.value);
         });
+
+        // WeChat Browser Detection
+        (function detectWeChat() {
+            var ua = navigator.userAgent.toLowerCase();
+            var isWeChat = ua.indexOf('micromessenger') !== -1;
+            if (!isWeChat) return;
+
+            var overlay = document.getElementById('wechatOverlay');
+            var closeBtn = document.getElementById('wechatClose');
+            if (!overlay || !closeBtn) return;
+
+            // Determine language for WeChat prompt
+            var lang = savedLang;
+            var isZh = lang === 'zh';
+
+            if (!isZh) {
+                document.getElementById('wechatTitle').textContent = 'Please open in a browser';
+                document.getElementById('wechatDesc').textContent = 'You are using the WeChat built-in browser. Some features may be limited. Please follow these steps:';
+                document.getElementById('wechatSteps').innerHTML = '<li>Tap the "···" button in the top right corner</li><li>Select "Open in Browser"</li>';
+                closeBtn.textContent = 'Got it';
+            }
+
+            overlay.classList.add('active');
+
+            closeBtn.addEventListener('click', function() {
+                overlay.classList.remove('active');
+            });
+        })();
     </script>
 </body>
 </html>
