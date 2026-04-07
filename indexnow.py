@@ -10,16 +10,15 @@ HOST = "zlibnow.com"
 
 URLS = [
     "https://zlibnow.com/",
-    "https://zlibnow.com/?lang=en",
-    "https://zlibnow.com/?lang=zh",
-    "https://zlibnow.com/?lang=es",
-    "https://zlibnow.com/?lang=fr",
-    "https://zlibnow.com/?lang=de",
-    "https://zlibnow.com/?lang=it",
-    "https://zlibnow.com/?lang=ja",
-    "https://zlibnow.com/?lang=ko",
-    "https://zlibnow.com/?lang=ru",
-    "https://zlibnow.com/?lang=ar",
+    "https://zlibnow.com/zh/",
+    "https://zlibnow.com/es/",
+    "https://zlibnow.com/fr/",
+    "https://zlibnow.com/de/",
+    "https://zlibnow.com/it/",
+    "https://zlibnow.com/ja/",
+    "https://zlibnow.com/ko/",
+    "https://zlibnow.com/ru/",
+    "https://zlibnow.com/ar/",
 ]
 
 payload = {
