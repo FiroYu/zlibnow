@@ -171,3 +171,25 @@ Domain: [zlibnow.com](https://zlibnow.com)
 (5xx / timeouts) fail the job, so GitHub emails the owner automatically — remove
 or re-verify those links, then update the "Unstable" tags on the pages if needed.
 Onion links require Tor and are checked manually.
+
+## Page generation
+
+The 10 `index.html` pages are **generated — do not edit them directly**.
+Structure lives in `tools/build_pages.py` (`TEMPLATE`), per-language text in
+`tools/pages_data/<lang>.json`. Edit either, then from the repo root:
+
+```
+py tools/build_pages.py
+```
+
+All 10 pages are rewritten; review the diff and commit. A `{{Lnnn}}` placeholder
+stands for line n of the generated page; a language whose JSON lacks that key
+omits the line (the legacy `?lang=` redirect exists only on `/`).
+
+## Analytics
+
+None. Google Analytics was removed on 2026-09-28 (sets cookies, and
+googletagmanager.com is unreachable in mainland China). To re-add measurement,
+use a no-cookie provider — e.g. [GoatCounter](https://www.goatcounter.com)
+(free for non-commercial) or Cloudflare Web Analytics — and paste its snippet
+at the `Analytics slot` comment in `tools/build_pages.py`, then regenerate.
