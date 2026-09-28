@@ -8,13 +8,13 @@
 
 ## Official Browser Links
 
-| | Link |
-|--|------|
-| 1 | <https://z-lib.fm> |
-| 2 | <https://1lib.sk> |
-| 3 | <https://z-lib.sk> |
-| 4 | <http://z-lib.gd> |
-| 5 | <http://z-lib.gl> |
+| | Link | Status |
+|--|------|--------|
+| 1 | <https://z-lib.fm> | ✅ |
+| 2 | <https://1lib.sk> | ✅ |
+| 3 | <https://z-lib.sk> | ✅ |
+| 4 | <https://z-lib.gd> | ⚠️ Unstable |
+| 5 | <https://z-lib.gl> | ⚠️ Unstable |
 
 | Region | Link |
 |--------|------|
@@ -103,7 +103,7 @@ Si un site demande un paiement ou un don, ce n'est PAS le vrai Z-Library.
 
 Nutzer aus China: Verwenden Sie einen der obigen Links mit einem VPN.
 
-**Besuchen Sie diese falschen Seiten nicht:** ~~z-lib.io~~, ~~z-lib.id~~, ~~zlibrary.to~~ — sie stohlen Anmeldedaten und verlangen gefälschte Gebühren.
+**Besuchen Sie diese falschen Seiten nicht:** ~~z-lib.io~~, ~~z-lib.id~~, ~~zlibrary.to~~ — sie stehlen Anmeldedaten und verlangen gefälschte Gebühren.
 
 Wenn eine Seite Zahlungen oder Spenden verlangt, ist es NICHT das echte Z-Library.
 
@@ -164,3 +164,10 @@ Se un sito chiede pagamenti o donazioni, NON è il vero Z-Library.
 ## About
 
 Domain: [zlibnow.com](https://zlibnow.com)
+
+## Link monitoring
+
+`.github/workflows/link-check.yml` runs `tools/check_links.py` daily. Dead links
+(5xx / timeouts) fail the job, so GitHub emails the owner automatically — remove
+or re-verify those links, then update the "Unstable" tags on the pages if needed.
+Onion links require Tor and are checked manually.
