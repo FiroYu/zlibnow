@@ -1,14 +1,33 @@
 // FAQ Accordion
-// JS sets an exact max-height (scrollHeight) so long localized answers are never clipped;
+// JS animates the open/close, then lifts the max-height cap entirely so long
+// localized answers (and later reflows: resize, font swap) are never clipped;
 // the CSS fallback (600px) only applies without JS.
 document.querySelectorAll('.faq-question').forEach(function(q) {
     function toggleFaq() {
         var item = q.parentElement;
         var answer = item.querySelector('.faq-answer');
-        var isActive = item.classList.toggle('active');
-        q.setAttribute('aria-expanded', isActive);
-        if (answer) {
-            answer.style.maxHeight = isActive ? answer.scrollHeight + 'px' : '';
+        if (!answer) return;
+        if (item.classList.contains('active')) {
+            // Collapse: pin the real current height first (the cap may have
+            // been lifted to 'none'), then animate back to 0.
+            answer.style.maxHeight = answer.getBoundingClientRect().height + 'px';
+            void answer.offsetHeight;
+            item.classList.remove('active');
+            q.setAttribute('aria-expanded', 'false');
+            answer.style.maxHeight = '0';
+        } else {
+            item.classList.add('active');
+            q.setAttribute('aria-expanded', 'true');
+            // scrollHeight misses the vertical padding that is still animating
+            // up from 0, so pad the cap; once fully open, remove it entirely.
+            answer.style.maxHeight = answer.scrollHeight + 48 + 'px';
+            answer.addEventListener('transitionend', function open(e) {
+                if (e.propertyName !== 'max-height') return;
+                answer.removeEventListener('transitionend', open);
+                if (item.classList.contains('active')) {
+                    answer.style.maxHeight = 'none';
+                }
+            });
         }
     }
     q.addEventListener('click', toggleFaq);
