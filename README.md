@@ -13,8 +13,6 @@
 | 1 | <https://z-lib.fm> | ✅ |
 | 2 | <https://1lib.sk> | ✅ |
 | 3 | <https://z-lib.sk> | ✅ |
-| 4 | <https://z-lib.gd> | ⚠️ Unstable |
-| 5 | <https://z-lib.gl> | ⚠️ Unstable |
 
 | Region | Link |
 |--------|------|
@@ -170,7 +168,12 @@ Domain: [zlibnow.com](https://zlibnow.com)
 `.github/workflows/link-check.yml` runs `tools/check_links.py` daily. Dead links
 (5xx / timeouts) fail the job, so GitHub emails the owner automatically — remove
 or re-verify those links, then update the "Unstable" tags on the pages if needed.
-Onion links require Tor and are checked manually.
+Some hosts (see `RESET_TOLERANT` in the script) sit behind DiamWall, which resets
+TCP connections from CI IPs while real browsers get 200; resets there count as
+WARN, not FAIL. Onion links require Tor and are checked manually.
+
+Removed on 2026-11-03: z-lib.gd and z-lib.gl (HTTP 503 for 2+ weeks from both
+CI and a real-browser fetch).
 
 ## Page generation
 

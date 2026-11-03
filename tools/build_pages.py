@@ -184,8 +184,6 @@ TEMPLATE = r"""<!DOCTYPE html>
                 <a href="https://z-lib.fm/" target="_blank" rel="noopener noreferrer">z-lib.fm</a>
                 <a href="https://1lib.sk/" target="_blank" rel="noopener noreferrer">1lib.sk</a>
                 <a href="https://z-lib.sk/" target="_blank" rel="noopener noreferrer">z-lib.sk</a>
-{{L168}}
-{{L169}}
             </div>
             <div class="links full">
 {{L172}}

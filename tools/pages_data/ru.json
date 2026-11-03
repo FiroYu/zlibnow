@@ -40,8 +40,6 @@
  "L153": "            <option value=\"/ar/\">العربية</option>",
  "L158": "            <p>Проверенные ссылки для доступа к Z-Library</p>",
  "L163": "            <h2 class=\"section-title-blue\">Доступ через браузер</h2>",
- "L168": "                <a href=\"https://z-lib.gd/\" target=\"_blank\" rel=\"noopener noreferrer\">z-lib.gd <span class=\"tag tag-red\">Нестабильно</span></a>",
- "L169": "                <a href=\"https://z-lib.gl/\" target=\"_blank\" rel=\"noopener noreferrer\">z-lib.gl <span class=\"tag tag-red\">Нестабильно</span></a>",
  "L172": "                <a href=\"https://z-library.ec/\" target=\"_blank\" rel=\"noopener noreferrer\">z-library.ec <span class=\"tag tag-blue\">Италия / Франция / Испания</span></a>",
  "L173": "                <a href=\"https://go-to-library.sk/#browser_extensions_tab\" target=\"_blank\" rel=\"noopener noreferrer\">Расширение Firefox <span class=\"tag tag-green\">Auto</span></a>",
  "L175": "            <p class=\"note\">Пользователи из Китая: используйте любую из ссылок выше с VPN.</p>",

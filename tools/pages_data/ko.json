@@ -40,8 +40,6 @@
  "L153": "            <option value=\"/ar/\">العربية</option>",
  "L158": "            <p>검증된 Z-Library 액세스 링크</p>",
  "L163": "            <h2 class=\"section-title-blue\">브라우저 액세스</h2>",
- "L168": "                <a href=\"https://z-lib.gd/\" target=\"_blank\" rel=\"noopener noreferrer\">z-lib.gd <span class=\"tag tag-red\">불안정</span></a>",
- "L169": "                <a href=\"https://z-lib.gl/\" target=\"_blank\" rel=\"noopener noreferrer\">z-lib.gl <span class=\"tag tag-red\">불안정</span></a>",
  "L172": "                <a href=\"https://z-library.ec/\" target=\"_blank\" rel=\"noopener noreferrer\">z-library.ec <span class=\"tag tag-blue\">이탈리아 / 프랑스 / 스페인</span></a>",
  "L173": "                <a href=\"https://go-to-library.sk/#browser_extensions_tab\" target=\"_blank\" rel=\"noopener noreferrer\">Firefox 확장 <span class=\"tag tag-green\">Auto</span></a>",
  "L175": "            <p class=\"note\">중국 사용자: 위의 링크를 VPN과 함께 사용하세요.</p>",

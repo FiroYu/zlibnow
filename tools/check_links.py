@@ -5,7 +5,8 @@ Exit codes: 0 = all OK/warn, 1 = at least one FAIL.
 Rules:
   OK   : HTTP < 400 (3xx anti-bot challenge loops count as alive)
   WARN : 403/429 — geo/bot block; may still work for real users, human review
-  FAIL : 5xx, 404, timeouts, connection errors
+         connection reset for hosts in RESET_TOLERANT (WAF blocks CI IPs)
+  FAIL : 5xx, 404, timeouts, other connection errors
 Onion links cannot be checked from CI (no Tor) and are intentionally omitted.
 """
 import sys
@@ -19,12 +20,19 @@ LINKS = [
     "https://z-lib.fm/",
     "https://1lib.sk/",
     "https://z-lib.sk/",
-    "https://z-lib.gd/",
-    "https://z-lib.gl/",
     "https://z-library.ec/",
     "https://go-to-library.sk/",
     "https://www.torproject.org/download/",
 ]
+
+# DiamWall (the WAF in front of these hosts) resets TCP connections from
+# cloud-provider IP ranges, including GitHub Actions runners, while real
+# browsers get HTTP 200 (verified 2026-11-03 via a browser fetch). Treat
+# connection resets on these hosts as WARN so the daily cron does not fail
+# on a false positive; DNS errors, timeouts and 5xx still FAIL.
+RESET_TOLERANT = {
+    "https://z-lib.fm/",
+}
 
 TIMEOUT = 20
 ATTEMPTS = 2
@@ -48,6 +56,8 @@ def check(url: str) -> tuple[str, str]:
         if code is None:
             if attempt < ATTEMPTS:
                 continue
+            if url in RESET_TOLERANT and "Connection reset" in last_err:
+                return "WARN", "connection reset (WAF blocks CI IPs — verify in a real browser)"
             return "FAIL", last_err
         if code < 400:
             return "OK", f"HTTP {code}"
